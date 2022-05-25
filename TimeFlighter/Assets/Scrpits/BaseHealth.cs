@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class BaseHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [SerializeField] int basehealth = 300;
 
-    // Update is called once per frame
-    void Update()
+ void OnTriggerEnter2D(Collider2D other) {
+     DamageDoneEnemies damageDoneEnemies = other.GetComponent<DamageDoneEnemies>();
+    
+    if (damageDoneEnemies != null)
     {
-        
+        TakeDamageP(damageDoneEnemies.GetDamageE());
+        damageDoneEnemies.HitE();
     }
+  }
+
+  void  TakeDamageP(int damageE){
+      basehealth -= damageE;
+      if (basehealth <= 0)
+      {
+         Destroy(gameObject); 
+      }
+  }
+
 }
