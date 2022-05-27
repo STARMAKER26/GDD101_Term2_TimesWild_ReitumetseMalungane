@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!50 &486350340 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 9060278143773113100, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
+  m_PrefabInstance: {fileID: 7390731854594638746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,12 +466,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8530692668171484975, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 8530692668171484975, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
+      propertyPath: _myRigidbody
+      value: 
+      objectReference: {fileID: 486350340}
     - target: {fileID: 9060278143773113100, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9060278143773113100, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
       propertyPath: m_Simulated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060278143773113100, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060278143773113100, guid: f2d50d97999c6d44b8807f114b9d2173, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

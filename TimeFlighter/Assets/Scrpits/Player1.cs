@@ -6,28 +6,41 @@ using UnityEngine.InputSystem;
 public class Player1 : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
+    // [SerializeField] float turnSpeed = 5f; 
+
+     Vector2 moveInput;
+     Vector2 mousePos;
+
+    public Rigidbody2D _myRigidbody;
+    public Camera cam;
 
 
-    Vector2 moveInput;
-
-
-    Rigidbody2D _myRigidbody;
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
         _myRigidbody = GetComponent<Rigidbody2D>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+   
+     void Update()
     {
-        Fly();
-         _myRigidbody.MovePosition(_myRigidbody.position * moveSpeed * Time.fixedDeltaTime);
+    
+     _myRigidbody.MovePosition(_myRigidbody.position * moveSpeed * Time.fixedDeltaTime);
+          
+    mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
     }
 
+ void FixedUpdate() {
+     Fly();
+
+         Vector2 lookDir = mousePos - _myRigidbody.position;
+        float angle = Mathf.Atan2(lookDir.y,lookDir.x) * Mathf.Rad2Deg;
+        _myRigidbody.rotation = angle;
+        
+    }
+
+    
  
 
     void Fly()
@@ -46,4 +59,8 @@ public class Player1 : MonoBehaviour
         moveInput = value.Get<Vector2>();
         Debug.Log(moveInput);
     }
+   
+    
+
+
 }
