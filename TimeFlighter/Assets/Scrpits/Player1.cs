@@ -35,7 +35,7 @@ public class Player1 : MonoBehaviour
      Fly();
 
          Vector2 lookDir = mousePos - _myRigidbody.position;
-        float angle = Mathf.Atan2(lookDir.y,lookDir.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(lookDir.y,lookDir.x) * Mathf.Rad2Deg ;
         _myRigidbody.rotation = angle;
         
     }
